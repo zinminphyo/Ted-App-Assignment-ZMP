@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/speaker_profile"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_medium"/>
+    <TextView
+        android:id="@+id/tv_speaker_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrid Fetell Lee"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_alignTop="@+id/profile_image"
+        />
+    <TextView
+        android:id="@+id/tv_speaker_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Designer, writer"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_below="@+id/tv_speaker_name"
+        android:layout_marginLeft="@dimen/margin_small"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_speaker"
+        android:layout_alignLeft="@+id/tv_speaker_work"
+        android:layout_below="@+id/tv_speaker_work"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+
+
+
+
+</RelativeLayout>

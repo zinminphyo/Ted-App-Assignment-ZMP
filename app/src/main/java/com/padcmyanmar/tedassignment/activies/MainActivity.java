@@ -1,5 +1,6 @@
-package com.padcmyanmar.tedassignment;
+package com.padcmyanmar.tedassignment.activies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,9 +12,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.padcmyanmar.tedassignment.R;
 import com.padcmyanmar.tedassignment.adapters.TedAdapter;
+import com.padcmyanmar.tedassignment.delegates.TedsDelegate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements TedsDelegate {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         RecyclerView rvTeds = findViewById(R.id.rv_ted_talks);
-        TedAdapter tedAdapter = new TedAdapter();
+        TedAdapter tedAdapter = new TedAdapter(this);
         rvTeds.setAdapter(tedAdapter);
         rvTeds.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -58,5 +63,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTapTedLists() {
+        Intent intent = new Intent(getApplicationContext(),TedTalkDetailActivity.class);
+        startActivity(intent);
     }
 }

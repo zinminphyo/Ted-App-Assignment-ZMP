@@ -7,23 +7,17 @@ import android.view.ViewGroup;
 
 import com.padcmyanmar.tedassignment.R;
 import com.padcmyanmar.tedassignment.delegates.TedsDelegate;
+import com.padcmyanmar.tedassignment.viewholders.NextTedsTalkViewHolder;
 import com.padcmyanmar.tedassignment.viewholders.TedsViewHolder;
 
-/**
- * Created by zinminphyoe on 6/2/18.
- */
+public class NextTedsAdapter extends RecyclerView.Adapter {
 
-public class TedAdapter extends RecyclerView.Adapter{
-
-    private TedsDelegate mTedsDelegate;
-
-    public TedAdapter(TedsDelegate tedsDelegate){mTedsDelegate=tedsDelegate;}
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.view_holder_ted_talks,parent,false);
-        return new TedsViewHolder(view,mTedsDelegate);
+        View view = layoutInflater.inflate(R.layout.layout_teds_list,parent,false);
+        return new NextTedsTalkViewHolder(view);
     }
 
     @Override
@@ -33,6 +27,6 @@ public class TedAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return 15;
+        return 3;
     }
 }
