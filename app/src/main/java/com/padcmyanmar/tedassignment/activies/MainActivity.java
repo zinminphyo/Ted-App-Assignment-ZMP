@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.padcmyanmar.tedassignment.R;
 import com.padcmyanmar.tedassignment.adapters.TedAdapter;
+import com.padcmyanmar.tedassignment.data.models.TedsModel;
 import com.padcmyanmar.tedassignment.delegates.TedsDelegate;
 
 public class MainActivity extends BaseActivity implements TedsDelegate {
@@ -30,6 +31,8 @@ public class MainActivity extends BaseActivity implements TedsDelegate {
         TedAdapter tedAdapter = new TedAdapter(this);
         rvTeds.setAdapter(tedAdapter);
         rvTeds.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+
+        TedsModel.getObjInstance().loadNewsList();
 
 
 
