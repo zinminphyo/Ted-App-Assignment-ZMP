@@ -1,15 +1,21 @@
 package com.padcmyanmar.tedassignment.data.vos;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class TedTalksVO {
-
+    @SerializedName("talk_id")
     private int talkId;
+
+    @SerializedName("title")
     private String title;
     private SpeakerVO speaker;
     private String imageUrl;
-    private String descriptionInSec;
-    private  String description;
+
+    @SerializedName("durationInSec")
+    private int descriptionInSec;
+    private String description;
 
     private List<TagVO> tags;
 
@@ -33,7 +39,7 @@ public class TedTalksVO {
         return imageUrl;
     }
 
-    public String getDescriptionInSec() {
+    public int getDescriptionInSec() {
         return descriptionInSec;
     }
 
